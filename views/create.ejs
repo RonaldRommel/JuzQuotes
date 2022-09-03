@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+
+  <body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="container-md">
+      <h1>Thank You For Contributing!</h1>
+      <form class="cf" method="post" action="/blogs">
+        <div class="half left cf">
+          <input
+            type="text"
+            name="author"
+            id="author"
+            name="author"
+            placeholder="Enter authors name"
+            required
+          />
+          <input
+            type="textarea"
+            name="quote"
+            id="quote"
+            name="quote"
+            placeholder="Enter Quote"
+            required
+          />
+        </div>
+        <input type="submit" id="input-submit" />
+      </form>
+    </div>
+    <div class="foot1"><%- include('./partials/foot.ejs') %></div>
+  </body>
+</html>
