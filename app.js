@@ -5,17 +5,16 @@ const app = express();
 const Blog = require("./models/blog");
 const blogRoutes = require("./routes/blogRoutes");
 const blogController = require("./controllers/blogController");
+require("dotenv").config();
 
 app.set("view engine", "ejs");
 
-const dbURI =
-  "mongodb+srv://RonaldRommel:Itachi1*.+@cluster0.paty8wc.mongodb.net/Blogging?retryWrites=true&w=majority";
+const dbURI = process.env.MONGO_DB;
 
 mongoose
   .connect(dbURI)
   .then(() => {
     app.listen(3000);
-    console.log("connected to database");
   })
   .catch((err) => console.log(err));
 
